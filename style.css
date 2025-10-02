@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Andika', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+}
+
+/* Main wrapper containing both forms */
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    transition: transform 0.5s ease;
+}
+
+/* Each form wrapper (for sign-in and sign-up) */
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* When 'active' class is added to wrapper, the sign-in form disappears and sign-up appears */
+.wrapper.active .form-wrapper.sign-in {
+    transform: scale(0) translate(-300px, 500px);
+}
+
+/* Initial state for sign-up form, which is hidden by default */
+.wrapper .form-wrapper.sign-up {
+    transform: scale(0) translate(200px, -500px);
+}
+
+/* When 'active' class is added, the sign-up form will be visible */
+.wrapper.active .form-wrapper.sign-up {
+    transform: scale(1) translate(0, 0);
+}
+
+/* Heading styles */
+h1 {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Input group styles */
+.input-group {
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+/* Label positioning and styling */
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+/* Input field styles */
+.input-group input {
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+/* When input is focused or valid, the label moves up */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -5px;
+    font-size: 14px;
+}
+
+/* Checkbox and remember me label styling */
+.remember {
+    margin: -5px 0 15px 5px;
+}
+
+.remember label {
+    color: #fff;
+    font-size: 14px;
+}
+
+.remember label input {
+    accent-color: #f4157e;
+}
+
+/* Submit button styling */
+button {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: #f4157e;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+/* Link styling for switching between sign-in and sign-up */
+.signUp-link {
+    font-size: 14px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.signUp-link p {
+    color: #fff;
+}
+
+.signUp-link p a {
+    color: #f4157e;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signUp-link p a:hover {
+    text-decoration: underline;
+}
+
+/* Social media login section styling */
+.social-platform {
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Social media icons styling */
+.social-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin: 15px 6px 0;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #fff;
+}
+
+.social-icons a i {
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover i {
+    color: rgba(0, 0, 0, 0.3);
+}
